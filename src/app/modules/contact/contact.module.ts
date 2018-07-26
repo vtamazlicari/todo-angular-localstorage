@@ -10,6 +10,7 @@ import {ReactiveFormsModule} from '@angular/forms';
     contactRoutes,
     ReactiveFormsModule,
   ],
+  exports: [ContactPageComponent],
   declarations: [ContactPageComponent]
 })
 export class ContactModule { }

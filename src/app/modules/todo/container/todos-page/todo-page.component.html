@@ -1,0 +1,50 @@
+<div class="container">
+  <div class="list-group mb-3">
+    <div *ngFor="let task of todos">
+      <div *ngIf="task.finished === false" class="row">
+        <div class="col-md-9">
+          <a routerLink="/details/{{task.name}}" class="list-group-item list-group-item-action mb-3">
+            {{task.name}}<span class="badge text-danger">{{task.finished}}</span>
+          </a>
+        </div>
+        <div class="col-md-3">
+          <button type="button" class="btn btn-danger mt-2 col-md-6" (click)="onDeleteMe(task)">Delete</button>
+        </div>
+      </div>
+   </div>
+
+    <div *ngFor="let task of todos">
+      <div *ngIf="task.finished === true" class="row">
+        <div class="col-md-9">
+          <a routerLink="/details/{{task.name}}" class="list-group-item list-group-item-action mb-3">
+            {{task.name}}<span class="badge text-primary">{{task.finished}}</span>
+          </a>
+        </div>
+        <div class="col-md-3">
+          <button type="button" class="btn btn-danger mt-2 col-md-6" (click)="onDeleteMe(task)">Delete</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="mb-5">
+    <form [formGroup]="todoForm" (submit)="onSubmit()">
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" class="form-control" id="name" formControlName="name" [ngClass]="{ 'is-invalid': submitted && f.name.errors }" required>
+      </div>
+
+      <div class="form-group">
+        <label for="date">Data</label>
+        <input type="date" class="form-control" id="date" formControlName="date" [ngClass]="{ 'is-invalid': submitted && f.date }" required>
+      </div>
+
+      <div class="form-group">
+        <label for="description">Descriptions</label>
+        <textarea class="form-control" id="description" rows="5" formControlName="description" [ngClass]="{ 'is-invalid': submitted && f.description.errors }" required></textarea>
+      </div>
+
+      <button type="submit" class="btn btn-success">Submit</button>
+
+    </form>
+  </div>
+</div>

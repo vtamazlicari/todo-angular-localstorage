@@ -1,11 +1,9 @@
-interface Todos {
-  id: number;
+interface Tasks {
+  id: string;
   name: string;
   finished: boolean;
-  finishedAt: {
-    date:string;
-    description: string;
-  },
+  date: string;
+  description: string;
 }
 
-export default Todos;
+export default Tasks;

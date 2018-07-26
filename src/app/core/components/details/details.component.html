@@ -1,0 +1,11 @@
+<div class="container">
+  <ul class="list-group">
+    <li class="list-group-item">Name <span class="badge">{{todosSelect.name}}</span></li>
+    <li class="list-group-item">Date <span class="badge">{{todosSelect.date}}</span></li>
+    <li class="list-group-item">Message <span class="badge">{{todosSelect.description}}</span></li>
+    <li class="list-group-item">Finished <span class="badge">{{todosSelect.finished}}</span></li>
+  </ul>
+  <div *ngIf="!todosSelect.finished">
+   <button type="button" class="btn btn-success mr-3 mt-3" (click)="onClickMe()">Finish</button>
+  </div>
+</div>

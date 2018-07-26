@@ -5,7 +5,7 @@
       <label for="name">Name</label>
       <input type="text" class="form-control" id="name" formControlName="name" [ngClass]="{ 'is-invalid': submitted && f.name.errors }" required>
       <div *ngIf="f.name.errors && submitted" class="invalid-feedback">
-        <div *ngIf="f.name.errors.required">Name is required</div>
+        <div *ngIf="f.name.errors.required" class="text-danger">Name is required</div>
       </div>
     </div>
 
@@ -13,8 +13,8 @@
       <label for="email">Email</label>
       <input type="text" class="form-control" id="email" formControlName="email" [ngClass]="{ 'is-invalid': submitted && f.email.errors }" required>
       <div *ngIf="f.email.errors && submitted" class="invalid-feedback">
-        <div *ngIf="f.email.errors.required">Email is required</div>
-        <div *ngIf="f.email.errors.email">Email must be a valid email address</div>
+        <div *ngIf="f.email.errors.required" class="text-danger">Email is required</div>
+        <div *ngIf="f.email.errors.email" class="text-danger">Email must be a valid email address</div>
       </div>
     </div>
 
@@ -22,7 +22,7 @@
       <label for="message">Message</label>
       <textarea class="form-control" id="message" rows="5" formControlName="message" [ngClass]="{ 'is-invalid': submitted && f.message.errors }" required></textarea>
       <div *ngIf="f.message.errors && submitted" class="invalid-feedback">
-        <div *ngIf="f.message.errors.required">Message is required</div>
+        <div *ngIf="f.message.errors.required" class="text-danger">Message is required</div>
       </div>
     </div>
 
